@@ -1,7 +1,7 @@
 import {
   RECEIVE_ARTICLE,
   DELETE_ARTICLE,
-  RECEIVE_VISIT_PAGE
+  RECEIVE_VISIT_PAGE,
 } from '../../../actions/types';
 
 export const articleReducer = (state = {}, action) => {
@@ -17,4 +17,4 @@ export const articleReducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};

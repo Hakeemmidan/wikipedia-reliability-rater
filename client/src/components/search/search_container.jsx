@@ -9,12 +9,12 @@ const mstp = (state, ownProps) => {
     search_articles: [],
     score: '',
   };
-  return  {article: state.article, defaultFields}
-}
+  return {article: state.article, defaultFields};
+};
 
 const mdtp = () => (dispatch) => ({
   createArticle: (article) => dispatch(createArticle(article)),
-  searchDB: (keyword) => dispatch(searchDB(keyword))
-})
+  searchDB: (keyword) => dispatch(searchDB(keyword)),
+});
 
 export default connect(mstp, mdtp)(WikiSearch);

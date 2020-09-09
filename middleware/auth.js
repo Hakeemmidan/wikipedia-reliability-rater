@@ -6,13 +6,13 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config/keys.js');
 
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
   // Get token from header
   const token = req.header('x-auth-token');
 
   // if token does not exist
   if (!token) {
-    return res.status(401).json({ msg: 'Token missing, authorization denied!' });
+    return res.status(401).json({msg: 'Token missing, authorization denied!'});
   }
 
   // if there is a token
@@ -21,6 +21,6 @@ module.exports = function(req, res, next) {
     req.user = decodedToken.user;
     next();
   } catch (err) {
-    res.status(401).json({ msg: 'Token is invalid!' });
+    res.status(401).json({msg: 'Token is invalid!'});
   }
-}
+};

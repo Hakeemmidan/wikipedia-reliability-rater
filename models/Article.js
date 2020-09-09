@@ -15,7 +15,7 @@ let ArticleSchema = new Schema({
   // },
   wordCount: {type: Number, require: true},
   wirrScore: {type: Number, required: true},
-  lastUpdated: {type: String, required: true}
-})
+  lastUpdated: {type: String, required: true},
+});
 
 module.exports = Article = mongoose.model('Article', ArticleSchema);

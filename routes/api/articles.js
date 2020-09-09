@@ -15,8 +15,10 @@ articleRoutes.route('/').get(function (req, res) {
 
 articleRoutes.get('/:id', (req, res) => {
   Article.findById(req.params.id)
-    .then(article => res.json(article))
-    .catch(err => res.status(404).json({ noarticlefound: 'No Article found with that ID'}));
+    .then((article) => res.json(article))
+    .catch((err) =>
+      res.status(404).json({noarticlefound: 'No Article found with that ID'})
+    );
 });
 
 articleRoutes.post('/', (req, res) => {
@@ -29,13 +31,14 @@ articleRoutes.post('/', (req, res) => {
     references: req.body.references,
     wirrScore: req.body.wirrScore,
     wordCount: req.body.wordCount,
-    lastUpdated: req.body.lastUpdated
-  })
+    lastUpdated: req.body.lastUpdated,
+  });
 
-  newArticle.save()
-    .then(article => res.json(article))
-    .catch(err => res.json(err));
-})
+  newArticle
+    .save()
+    .then((article) => res.json(article))
+    .catch((err) => res.json(err));
+});
 
 // articleRoutes.get('/search/:keyword', (req, res) => {
 //   Article.find({ title: req.params.keyword })

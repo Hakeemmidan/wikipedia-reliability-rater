@@ -5,27 +5,27 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
 } from '../actions/types';
 
 const intialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
   loading: true,
-  user: null
-}
+  user: null,
+};
 
 export default function (state = intialState, action) {
-  const { type, data } = action;
+  const {type, data} = action;
 
-  switch(type) {
+  switch (type) {
     case USER_LOADED:
       return {
         ...state,
         isAuthenticated: true,
         loading: false,
-        user: data
-      }
+        user: data,
+      };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem('token', data.token);
@@ -33,8 +33,8 @@ export default function (state = intialState, action) {
         ...state,
         ...data,
         isAuthenticated: true,
-        loading: false
-      }
+        loading: false,
+      };
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
@@ -44,8 +44,8 @@ export default function (state = intialState, action) {
         ...state,
         token: null,
         isAuthenticated: false,
-        loading: false
-      }
+        loading: false,
+      };
     default:
       return state;
   }
