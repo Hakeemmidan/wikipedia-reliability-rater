@@ -63,7 +63,6 @@ router.post(
         },
       };
 
-      // TODO: Change expired time to 1 hr (36000) when deployed
       jwt.sign(data, config.secretOrKey, {expiresIn: 360000}, (err, token) => {
         if (err) throw err;
         res.json({token});

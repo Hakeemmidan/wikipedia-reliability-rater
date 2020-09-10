@@ -40,14 +40,4 @@ articleRoutes.post('/', (req, res) => {
     .catch((err) => res.json(err));
 });
 
-// articleRoutes.get('/search/:keyword', (req, res) => {
-//   Article.find({ title: req.params.keyword })
-//     .sort({ date: -1 })
-//     .then(article => res.json(article))
-//     .catch(err =>
-//       res.status(404).json({ notweetsfound: 'No article found' }
-//       )
-//     );
-// });
-
 module.exports = articleRoutes;

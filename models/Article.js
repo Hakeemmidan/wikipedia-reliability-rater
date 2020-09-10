@@ -8,11 +8,6 @@ let ArticleSchema = new Schema({
   url: {type: String, required: true},
   category: {type: Array, required: true},
   references: {type: Array, required: true},
-  // lastUpdated: {type: String, required: true},
-  // contributors: {
-  //   username: {type: String, required: true},
-  //   totalContributions: { type: String, required: true },
-  // },
   wordCount: {type: Number, require: true},
   wirrScore: {type: Number, required: true},
   lastUpdated: {type: String, required: true},

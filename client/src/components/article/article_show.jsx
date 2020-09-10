@@ -146,9 +146,6 @@ export class ArticleShow extends React.Component {
             </div>
           </div>
           <div className="content-right">
-            {/* <div className="radar-chart">
-                        <RadarChart domainCounts={this.state.domainCounts} />
-                        </div> */}
             <div className="donut-chart">
               <DonutGraph
                 extractTop10AuthorsUsernames={this.extractTop10AuthorsUsernames}

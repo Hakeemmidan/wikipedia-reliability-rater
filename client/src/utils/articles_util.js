@@ -1,14 +1,7 @@
 import axios from 'axios';
 import * as request from 'request';
-// used to make HTTP requests
-// Basically goes inside the page that you make a request to
 import * as cheerio from 'cheerio';
-// used to parse the HTML elements on the page
-// Pretty much the same as using jQuery
-// but MUCH faster than JS DOM and jQuery
-// Docs say that it is about 8x faster than JS DOM
 import * as URL from 'url-parse';
-// used to parse URLs
 
 export const createArticle = (article) => {
   return axios.post('/api/articles/', article);
