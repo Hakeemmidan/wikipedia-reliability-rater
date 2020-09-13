@@ -11,12 +11,8 @@ import {Provider} from 'react-redux';
 // Function and variable importing
 import Navbar from './layout/navbar';
 import Landing from './layout/landing';
-import Register from './auth/Register';
-import Login from './auth/Login';
 import {ArticleShow} from './article/article_show';
 import store from '../store';
-import {loadUser} from '../actions/auth';
-import setAuthToken from '../utils/setAuthToken';
 import ModalContainer from '../components/modal/modal_container';
 import MultipleUsersIconContainer from './SVGs/multiple_users_icon_container';
 
@@ -28,15 +24,7 @@ import '../stylesheets/charts.css';
 import '../stylesheets/donut_graph.css';
 import '../stylesheets/modal.css';
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
-
   return (
     <Provider store={store}>
       <Router>
@@ -46,8 +34,6 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <section className="container">
             <Switch>
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
               <Route exact path="/article/show/:id" component={ArticleShow} />
               <Route to="/" component={MultipleUsersIconContainer} />
               <Redirect to="/" />

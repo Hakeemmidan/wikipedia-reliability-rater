@@ -4,28 +4,7 @@
 
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-const config = require('./config/keys.js');
-const db = config.mongoURI;
 const path = require('path');
-
-// Connect to MongoDB
-const connectDB = async () => {
-  try {
-    await mongoose.connect(db, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-    });
-
-    console.log('Connected to MongoDB...');
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
-};
-
-connectDB();
 
 app.use(express.json({extended: false}));
 
