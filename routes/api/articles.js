@@ -1,6 +1,5 @@
 const express = require('express');
 const articleRoutes = express.Router();
-const mongoose = require('mongoose');
 const Article = require('../../models/Article');
 
 articleRoutes.route('/').get(function (req, res) {

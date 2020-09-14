@@ -8,8 +8,6 @@ const path = require('path');
 
 app.use(express.json({extended: false}));
 
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/users', require('./routes/api/register'));
 app.use('/api/articles', require('./routes/api/articles'));
 app.use('/api/articles/search', require('./routes/api/search'));
 
