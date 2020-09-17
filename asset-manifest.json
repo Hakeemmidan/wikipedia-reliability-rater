@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/wikipedia-reliability-rater/static/css/main.44c3c5be.chunk.css",
+    "main.js": "/wikipedia-reliability-rater/static/js/main.a5e12f44.chunk.js",
+    "main.js.map": "/wikipedia-reliability-rater/static/js/main.a5e12f44.chunk.js.map",
+    "runtime-main.js": "/wikipedia-reliability-rater/static/js/runtime-main.de448abd.js",
+    "runtime-main.js.map": "/wikipedia-reliability-rater/static/js/runtime-main.de448abd.js.map",
+    "static/js/2.c0b259e3.chunk.js": "/wikipedia-reliability-rater/static/js/2.c0b259e3.chunk.js",
+    "static/js/2.c0b259e3.chunk.js.map": "/wikipedia-reliability-rater/static/js/2.c0b259e3.chunk.js.map",
+    "index.html": "/wikipedia-reliability-rater/index.html",
+    "precache-manifest.50d49ec6b11ecd3e9fda5169c3d21c54.js": "/wikipedia-reliability-rater/precache-manifest.50d49ec6b11ecd3e9fda5169c3d21c54.js",
+    "service-worker.js": "/wikipedia-reliability-rater/service-worker.js",
+    "static/css/main.44c3c5be.chunk.css.map": "/wikipedia-reliability-rater/static/css/main.44c3c5be.chunk.css.map",
+    "static/media/app.css": "/wikipedia-reliability-rater/static/media/background-dark.2b6b86c2.png"
+  }
+}
