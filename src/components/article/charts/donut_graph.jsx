@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import {visitPage} from '../../../utils/articles_util';
 
 let cheerio = require('cheerio');
-let URL = require('url-parse');
 
 // Inspired by : https://www.d3-graph-gallery.com/graph/donut_basic.html
 // https://medium.com/@kj_schmidt/show-data-on-mouse-over-with-d3-js-3bf598ff8fc2
@@ -127,7 +126,7 @@ export class DonutGraph extends React.Component {
     });
     let data_ready = pie(d3.entries(this.state.data));
 
-    // Add div to body but isn't visible.
+    // Add div to body isn't visible.
     // This will be the box that appears next to mouse on hover.
     let div = d3
       .select('body')
