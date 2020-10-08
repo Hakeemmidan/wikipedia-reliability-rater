@@ -6,10 +6,8 @@ Description: This file is the component for the navbar across the website
              a hamburger menu when size desktop size is under 700 pixels
 */
 
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 
 const Navbar = () => {
   return (

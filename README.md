@@ -1,25 +1,24 @@
 # Wikipedia Reliability Rater (WiRR)
-<!-- <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/Powered%20by-MongoDB-green.svg"/></a>
-<a href="#"><img src="https://img.shields.io/badge/Powered%20by-JavaScript-orange.svg"/></a>
-<a href="#"><img src="https://img.shields.io/badge/Powered%20by-React/Redux-blue.svg"></a>
-<a href="https://github.com"><img src="https://img.shields.io/badge/Hosted%20on-GitHub-brightgreen.svg"/></a> -->
 
 [WiRR Live](http://www.wikipediarr.com/)
 
 ## Background and Overview
+
 WiRR is an application to help determine the reliability of a given Wikipedia article. The reliability of the article is determined by our custom made reliability index. The reliability index is determined mainly by citations. The citations have the following scoring:
 
-  | Domain / Source        | Score         |
-  |:-----------------------|:--------------|
-  | text/scholarly article | 5             |
-  | `.edu` / `.gov`        | 4             |
-  | `.org`                 | 3             |
-  | `.com` / `.net`        | 1             |
+| Domain / Source        | Score |
+| :--------------------- | :---- |
+| text/scholarly article | 5     |
+| `.edu` / `.gov`        | 4     |
+| `.org`                 | 3     |
+| `.com` / `.net`        | 1     |
 
 This would then be divided by the maximum total score and multiplied by 100 to get a percentage.
 
 ## Technologies
+
 #### Stack
+
 - Backend
   - Node
   - Express
@@ -27,7 +26,9 @@ This would then be divided by the maximum total score and multiplied by 100 to g
 - Frontend
   - React
   - Redux
+
 #### Noticable Dependencies
+
 - bcrypjs
   - Use: Hash passwords before they get stored in database
 - cheerio
@@ -36,13 +37,16 @@ This would then be divided by the maximum total score and multiplied by 100 to g
   - Use: Go to a certain webpage
 - D3
   - Use: Display data from charts
+
 #### APIs
+
 - [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page)
-  - Uses: 
+  - Uses:
     - Search functionality
     - Get total lifetime contributions of certain authors
 
 ## Setup
+
 1. Create file called `key_dev.js` under `./config` directory
    - And place code snippet with following format into your file:
    ```javaScript
@@ -57,6 +61,7 @@ This would then be divided by the maximum total score and multiplied by 100 to g
 5. Open http://localhost:3000/
 
 ## How to use
+
 1. Go to [WiRR](http://www.wikipediarr.com/)
 
 ![](client/src/img/landing_page.png)
@@ -68,19 +73,23 @@ This would then be divided by the maximum total score and multiplied by 100 to g
 3. Analyze result and measure how reliable this article is
 
 ![](client/src/img/article_show.png)
-  - Things to look at:
-    - Last updated date
-      - Is it new? Is it old?
-    - Citation source distribution
-      - Articles that have a majority of text citations are considered reliable in our measures
-    - Author activity
-      - Is this article mainly written by one author (observe donut chart)? If so, how many lifetime contributions do they have (observe bar chart)?
-      
+
+- Things to look at:
+  - Last updated date
+    - Is it new? Is it old?
+  - Citation source distribution
+    - Articles that have a majority of text citations are considered reliable in our measures
+  - Author activity
+    - Is this article mainly written by one author (observe donut chart)? If so, how many lifetime contributions do they have (observe bar chart)?
+
 ## Noticeable Features
+
 #### Interactive User Auth Errors
+
 ![](client/src/gif/user_auth_error_demo.gif)
 
 Done through `express-validator` and `gravatar` dependencies:
+
 ```JavaScript
 router.post(
   '/register',
@@ -116,14 +125,17 @@ router.post(
   }
 )
 ```
+
 Rest of code can be found in `routes/api/register.js`
 
+---
 
---- 
 #### Dynamic Search
+
 ![](client/src/gif/search.gif)
 
-Done through Wikimedia API: 
+Done through Wikimedia API:
+
 ```javaScript
 searchWiki() {
   let apiUrl = "https://en.wikipedia.org/w/api.php?origin=*";
@@ -152,16 +164,19 @@ searchWiki() {
 Rest of code can be found in `client/src/components/search/search.jsx`
 
 ---
+
 #### D3 Graphs
+
 ![](client/src/gif/charts_demo.gif)
 
 Both of the charts were drawn using [D3](https://d3js.org) JS (JavaScript) dependency.
 
-Data for __donut__ __chart__ is gathered using a combination of web scraping (through [cheerio](https://cheerio.js.org/) JS dependency) and web crawling (through [request](https://www.npmjs.com/package/request) JS dependency). 
+Data for **donut** **chart** is gathered using a combination of web scraping (through [cheerio](https://cheerio.js.org/) JS dependency) and web crawling (through [request](https://www.npmjs.com/package/request) JS dependency).
 
-On other hand, data for __bar__ __chart__ is mostly gained through Wikimedia API. That is where we searched for each of top 10 authors by username, and collected lifetime contribution.
+On other hand, data for **bar** **chart** is mostly gained through Wikimedia API. That is where we searched for each of top 10 authors by username, and collected lifetime contribution.
 
 Let us take a look at skeleton of donut chart as an example:
+
 ```JavaScript
 d3.select("#donut_graph_div").html("")
 const radius = Math.min(this.state.width, this.state.height) / 2 - this.state.margin
@@ -198,8 +213,8 @@ svg.selectAll('path')
 
 This sample would draw donut chart without mouseover effect and legend. Including those requires more code, which can be found in `client/src/components/article/charts/donut_graph.jsx`
 
-
 ## Future Features
-  - Ability for user to save favorite articles
-  - Integration of author lifetime contributions into reliability score
-    - If author with high number of lifetime contributions has written a significant portion of article, then article becomes more reliable.
+
+- Ability for user to save favorite articles
+- Integration of author lifetime contributions into reliability score
+  - If author with high number of lifetime contributions has written a significant portion of article, then article becomes more reliable.
