@@ -24,10 +24,10 @@ export class ArticleShow extends React.Component {
       articleWordCount: article['wordCount'],
       articleLastUpdated: article['lastUpdated'],
       domainCounts: {
-        books_text: 0,
-        edu_gov: 0,
+        booksOrText: 0,
+        eduOrGov: 0,
         org: 0,
-        'com/net': 0,
+        comOrNet: 0,
       },
       top10Authors: [],
     };
@@ -59,29 +59,29 @@ export class ArticleShow extends React.Component {
         });
 
         const domainCounts = {
-          books_text: 0,
-          edu_gov: 0,
+          booksOrText: 0,
+          eduOrGov: 0,
           org: 0,
-          com_net: 0,
+          comOrNet: 0,
         };
 
         updatedAllDomains.forEach((domain) => {
           switch (domain) {
             case 'edu':
             case 'gov':
-              domainCounts['edu_gov'] += 4;
+              domainCounts['eduOrGov'] += 4;
               break;
             case 'org':
               domainCounts['org'] += 3;
               break;
             default:
-              domainCounts['com_net'] += 1;
+              domainCounts['comOrNet'] += 1;
               break;
           }
         });
 
         for (let i = 0; i < allTextCitationCount; i++) {
-          domainCounts['books_text'] += 5;
+          domainCounts['booksOrText'] += 5;
         }
 
         that.setState({
@@ -130,18 +130,18 @@ export class ArticleShow extends React.Component {
               </div>
               <div className="content-ref">
                 Number of books/text references:{' '}
-                {this.state.domainCounts.books_text}
+                {this.state.domainCounts.booksOrText}
               </div>
               <div className="content-ref">
                 Number of edu/gov website references:{' '}
-                {this.state.domainCounts.edu_gov}
+                {this.state.domainCounts.eduOrGov}
               </div>
               <div className="content-ref">
                 Number of org website references: {this.state.domainCounts.org}
               </div>
               <div className="content-ref">
                 Number of com/net website references:{' '}
-                {this.state.domainCounts.com_net}
+                {this.state.domainCounts.comOrNet}
               </div>
             </div>
           </div>
