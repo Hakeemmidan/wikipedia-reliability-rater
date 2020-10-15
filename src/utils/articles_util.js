@@ -1,15 +1,6 @@
-import axios from 'axios';
 import * as request from 'request';
 import * as cheerio from 'cheerio';
 import * as URL from 'url-parse';
-
-export const createArticle = (article) => {
-  return axios.post('/api/articles/', article);
-};
-
-export const searchDB = (keyword) => {
-  return axios.get(`/api/articles/search/${keyword}`);
-};
 
 const util = require('util');
 

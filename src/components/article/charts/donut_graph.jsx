@@ -27,7 +27,6 @@ export class DonutGraph extends React.Component {
   }
 
   topTenAuthorContributionPercentage = () => {
-    const articleName = this.props.articleTitle;
     // We are going to store top ten authors and their contributions here
     let topTenAuthors = {};
 

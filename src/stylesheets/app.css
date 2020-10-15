@@ -65,7 +65,8 @@ h1 {
   outline: none;
 }
 
-.btn-primary, .dummy {
+.btn-primary,
+.dummy {
   height: 44px;
   margin-top: 18.5px;
   background: var(--primary-color);
@@ -82,7 +83,7 @@ h1 {
 }
 
 .btn:hover {
-  background: #4285F4;
+  background: #4285f4;
   opacity: 0.8;
 }
 
@@ -118,8 +119,7 @@ h1 {
 .form input[type='email'],
 .form input[type='password'],
 .signup-or-signin,
-.password-login
-button {
+.password-login button {
   font: inherit;
   border-radius: 100px;
 }
@@ -129,13 +129,13 @@ button {
 .form input[type='email']:focus,
 .form input[type='password']:focus,
 .signup-or-signin:focus,
-.password-login:focus
-button:focus {
+.password-login:focus button:focus {
   outline: none;
   background: #b1bace;
 }
 
-.form-login, .form-register {
+.form-login,
+.form-register {
   display: flex;
   flex-direction: column;
 }
@@ -205,19 +205,6 @@ button:focus {
   text-align: center;
 }
 
-#alert-msg {
-  position: absolute;
-  padding: 0.7rem 2rem;
-  z-index: 6001;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #ff4444;
-  text-align: center;
-  line-height: 2.5;
-  overflow: hidden;
-}
-
 .searchResults {
   max-height: 300px;
   overflow: auto;
@@ -248,7 +235,8 @@ button:focus {
   text-decoration: underline;
 }
 
-.searchResult-snippet, .searchResult-link {
+.searchResult-snippet,
+.searchResult-link {
   color: white;
 }
 
@@ -262,7 +250,7 @@ button:focus {
   .container {
     margin-top: 0rem;
   }
-  
+
   .x-large {
     font-size: 3rem;
   }
@@ -345,7 +333,8 @@ button:focus {
 html {
   height: 100%;
   font-family: 'Grenze', serif;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4) ), url('../img/background-dark.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url('../img/background-dark.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

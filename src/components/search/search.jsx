@@ -70,7 +70,6 @@ class WikiSearch extends React.Component {
                 wordCount: wordCount,
                 lastUpdated: timestamp,
               };
-              this.props.createArticle(article);
               this.state.search_articles.push(article);
               let prevResults = this.state.search_result;
               window.localStorage.setItem(title, JSON.stringify(article));

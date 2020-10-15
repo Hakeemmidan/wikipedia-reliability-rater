@@ -51,7 +51,7 @@ export class ArticleShow extends React.Component {
 
         // count books.google.com as a text citation
         allDomains.forEach((domain) => {
-          if (domain != 'books.google.com') {
+          if (domain !== 'books.google.com') {
             updatedAllDomains.push(domain);
           } else {
             allTextCitationCount += 1;
