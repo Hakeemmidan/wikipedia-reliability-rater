@@ -17,7 +17,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "request-promise": "^4.2.6",
-    "uuid": "^3.3.3"
+    "uuid": "^14.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",
